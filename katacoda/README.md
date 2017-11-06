@@ -12,8 +12,8 @@ How to run
 - Go to the [Katacoda Kubernetes Playground](https://www.katacoda.com/courses/kubernetes/playground)
 - Launch a cluster
 - Set the focus to Terminal Host 1
-- git clone https://github.com/pablo-iglesias/Kubernettes-settings.git
-- cd Kubernettes-settings/katacoda/
+- git clone https://github.com/pablo-iglesias/Kubernetes-settings.git
+- cd Kubernetes-settings/katacoda/
 - kubectl create -f secret.yaml
 - kubectl create -f deployment.yaml
 - kubectl create -f service.yaml
