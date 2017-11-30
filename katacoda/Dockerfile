@@ -58,8 +58,6 @@ RUN mkdir service \
 RUN { \	
 		echo 'cd /service/Microservice-POC'; \
 		echo 'git pull origin master'; \
-		echo './gradlew build'; \
-		echo 'cd build/jar'; \
-		echo 'java -jar Microservice.jar'; \
+		echo "./gradlew build | grep ^'BUILD FAILED' || java -jar build/jar/Microservice.jar"; \
 	} > /init.sh \
 	&& chmod +x /init.sh
