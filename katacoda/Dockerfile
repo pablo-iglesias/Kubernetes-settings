@@ -50,7 +50,7 @@ RUN apk --update add git openssh && \
 	
 RUN mkdir service \
 	&& cd service \
-	&& git clone https://github.com/pablo-iglesias/Microservice-POC.git \
+	&& git clone https://github.com/pablo-iglesias/Microservice.git \
 	&& cd Microservice-POC \
 	&& chmod +x gradlew \
 	&& ./gradlew test
