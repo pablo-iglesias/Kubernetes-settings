@@ -45,7 +45,7 @@ Create a Cloud SQL instance
 Go create yourself a [Google Cloud SQL Instance](https://cloud.google.com/sql/docs/mysql/create-instance)
 
 You need to specify:
-Type, MySQL Second Generation
+* Type, MySQL Second Generation
 * Instance name, **webapp1-db**
 * Password, **MAya4PJyWSDXab6u** (use this or it will not work)
 * Region, the same as the cluster
