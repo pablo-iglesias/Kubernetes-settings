@@ -99,8 +99,8 @@ Check that the pods are all running
 
 > kubectl get service webapp1
 
-Copy the external IP (wait if pending) and paste it in your browser, you should see the application running
-You can login with admin|admin or user1|pass1
+Copy the external IP (wait if pending) and paste it in your browser, you should see the application running.
+You can login with admin|admin or user1|pass1.
 
 Because debug mode is turned, you can grab the id of a POD and watch the stdout with the following command
 
