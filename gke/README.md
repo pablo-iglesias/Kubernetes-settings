@@ -69,7 +69,7 @@ Click *Furnish a new private key* and download a JSON file. Lets call it **servi
 
 Create the Proxy user
 ----------------
-Use the gcloud command below to create the user account named **proxyuser**, that the proxy will use to access your Cloud SQL instance, filling in the instance name and the password.
+Use the gcloud command below to create the user account named **proxyuser**, that the proxy will use to access your Cloud SQL instance.
 
 > gcloud sql users create proxyuser cloudsqlproxy~% --instance=webapp1-db --password=MAya4PJyWSDXab6u
 
@@ -83,8 +83,11 @@ Setup Kubernetes Deployment
 ----------------
 Run the following commands in your Cloud Shell
 > git clone https://github.com/pablo-iglesias/kubernetes-settings.git
+
 > cd kubernetes-settings/gke/
+
 > kubectl create -f secret.yaml
+
 > kubectl create -f deployment.yaml
 
 Edit the file **deployment.yaml** set the wildcard <INSTANCE_CONNECTION_NAME> to your **instance connection name**
