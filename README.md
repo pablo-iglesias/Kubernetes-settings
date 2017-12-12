@@ -13,13 +13,13 @@ Find description below
 ### Watch for the Dockerfile in this folder
 It will generate a Docker image with an environment ready to compile and launch the microservice.
 The resulting image has been pushed to docker hub with the tag **pabeagle/pablo:latest**.
-All the settings use this image to deploy the containerized app
+All the settings use this image to deploy the containerized app.
 
 It does the following things sequentially
 1. Install Java & JDK
 2. Install GIT
 3. Clone microservice repo
-4. Run graddle wrapper in order to download dependencies
+4. Run gradle rapper in order to download dependencies
 5. Create a shell script in the base path intended to be called upon container startup
 
 The script, called **init.sh** will do the following

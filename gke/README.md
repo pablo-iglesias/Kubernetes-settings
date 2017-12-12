@@ -31,6 +31,7 @@ Just create a new project from your GCP console ([watch documentation](https://c
 Create a Kubernetes Cluster
 ----------------
 From the very console ([click here](https://console.cloud.google.com/kubernetes/list)), create a cluster
+
 You need to specify:
 * Region, whatever closest to you
 * Number of nodes, 3
@@ -42,6 +43,7 @@ When the cluster is up and running, click the button *Connect*, copy the gcloud 
 Create a Cloud SQL instance
 ----------------
 Go create yourself a [Google Cloud SQL Instance](https://cloud.google.com/sql/docs/mysql/create-instance)
+
 You need to specify:
 Type, MySQL Second Generation
 * Instance name, **webapp1-db**
@@ -59,6 +61,7 @@ This is not over
 Create Cloud SQL Service Account
 ----------------
 First you should [Enable Clould SQL Administration API](https://console.cloud.google.com/flows/enableapi?apiid=sqladmin&redirect=https://console.cloud.google.com). After that, go to the [Cloud SQL Service accounts page](https://console.cloud.google.com/iam-admin/serviceaccounts/), select your project and click **Create service account**.
+
 You need to specify:
 * Role, select Cloud SQL > Cloud SQL Client.
 
