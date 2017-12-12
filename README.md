@@ -11,9 +11,10 @@ Find description below
 | [gke](gke)           | Google Kubernetes Engine |      3 |  MySQL             |
 
 ### Watch for the Dockerfile in this folder
-It will generate a Docker image with an environment ready to compile and launch the microservice
-The resulting image has been pushed to docker hub with the tag **pabeagle/pablo:latest**
+It will generate a Docker image with an environment ready to compile and launch the microservice.
+The resulting image has been pushed to docker hub with the tag **pabeagle/pablo:latest**.
 All the settings use this image to deploy the containerized app
+
 It does the following things sequentially
 1. Install Java & JDK
 2. Install GIT
