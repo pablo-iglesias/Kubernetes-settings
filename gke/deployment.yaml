@@ -1,0 +1,71 @@
+﻿apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp1
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: webapp1
+    spec:
+      containers:
+      - name: webapp1
+        image: pabeagle/pablo
+        command: ["/bin/sh"]
+        args: ["./init.sh"]
+        env:
+        - name: POC_DEBUG
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: DEBUG
+        - name: POC_DATABASE_ENGINE
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: DATABASE_ENGINE
+        - name: POC_MYSQL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MYSQL_HOST
+        - name: POC_MYSQL_PORT
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MYSQL_PORT
+        - name: POC_MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MYSQL_USER
+        - name: POC_MYSQL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MYSQL_PASS
+        ports:
+        - containerPort: 8000
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy", "--dir=/cloudsql",
+                  "-instances=<INSTANCE_CONNECTION_NAME>=tcp:3306",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+          - name: ssl-certs
+            mountPath: /etc/ssl/certs
+          - name: cloudsql
+            mountPath: /cloudsql
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
+        - name: cloudsql
+          emptyDir:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
