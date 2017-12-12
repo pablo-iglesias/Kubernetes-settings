@@ -4,8 +4,9 @@ I will be pushing infrastructure-as-a-code for enabling my [Microservice POC app
 
 ### Settings
 Find description below
+
 | Folder               | Environment              | Nodes  |  Database          |
-| -------------------- |:-------------------------| ------:|  -----------------:|
+| -------------------- |:------------------------ | ------:|  -----------------:|
 | [katacoda](katacoda) | Katacoda Playground      |      1 |  SQLite in memory  |
 | [gke](gke)           | Google Kubernetes Engine |      3 |  MySQL             |
 
