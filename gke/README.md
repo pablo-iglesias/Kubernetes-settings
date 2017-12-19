@@ -84,13 +84,13 @@ Setup Kubernetes Deployment
 Run the following commands in your Cloud Shell
 > git clone https://github.com/pablo-iglesias/kubernetes-settings.git<br/>
 cd kubernetes-settings/gke/<br/>
-kubectl create -f secret.yaml<br/>
-kubectl create -f deployment.yaml<br/>
 
 Edit the file **deployment.yaml** set the wildcard <INSTANCE_CONNECTION_NAME> to your **instance connection name**
 
-> kubectl create -f service.yaml<br/>
-> kubectl get pods
+> kubectl create -f secret.yaml<br/>
+kubectl create -f deployment.yaml<br/>
+kubectl create -f service.yaml<br/>
+kubectl get pods
 
 Check that the pods are all running
 
